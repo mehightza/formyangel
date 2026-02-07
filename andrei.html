@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Secret</title>
+        <meta name="description" content="Valentines day">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="styles.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    </head>
+    <style>
+        body {
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 600px;
+        }
+    </style>
+    <body style="background-image: url(/bkg.jpg)">
+        <div>
+            <h1 id="title" style="color: whitesmoke; text-align: center; padding-top: 50px;">Do you want to be my Valentine?</h1>
+            <h1 id="titleSuccess" style="color: red; text-align: center; visibility: hidden; font-size: 60px;">Love you so much!!</h1>
+        </div>
+        <div>
+            <center style="padding-top: 50px;">
+                <button class="btn btn-danger"style="width: 200px; height: 80px; font-size: 20px;" id="button1">normal, esti pisica mea</button>
+                <button class="btn btn-light" style="width: 200px; height: 80px; font-size: 20px;" id="button2">nu, esti o grasa</button>
+            </center>
+        </div>
+        <script>
+            let btn1 = document.getElementById("button1");
+            let btn1size = 200;
+            let fontsize = 20;
+            document.getElementById("button2").onclick = function(){
+                if(document.getElementById("button2").style.visibility != "hidden") {
+                btn1.style.width = btn1size + "px";
+                btn1.style.height = (btn1size-20) + "px"; 
+                btn1.style.fontSize = fontsize + "px";
+                btn1size += 10;
+                fontsize += 2;
+                }
+                if(fontsize > 24) {
+                    document.getElementById("button2").style.visibility = "hidden";
+                }
+            }
+            btn1.onclick = function() {
+                document.getElementById("button1").style.visibility = "hidden";
+                document.getElementById("button2").style.visibility = "hidden";
+                document.getElementById("title").style.visibility = "hidden";
+                document.getElementById("titleSuccess").style.visibility = "visible";
+            }
+            
+            
+        </script>
+    </body>
+</html>
